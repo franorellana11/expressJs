@@ -29,12 +29,19 @@ router.get('/filter', (req, res) => {
 
 router.get('/:id', (req,res)=> {
   const {id} = req.params
-  res.json({
-    id,
-    name: "Product One",
-    price: "$15.350",
-    text: "Responding in json format"
-  })
+
+  if (id === '999') {
+    res.status(404).json({
+      message: 'NOT FOUND'
+    })
+  } else {
+    res.status(200).json({
+      id,
+      name: `Product ${id}`,
+      price: "$15.350",
+      text: "Responding in json format"
+    })
+  }
 })
 
 ///////////////////////////////////// POST METHOD ///////////////////

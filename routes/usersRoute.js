@@ -4,6 +4,8 @@ const faker = require('faker')
 const routerUsers = express.Router()
 
 
+
+
 routerUsers.get('/', (req, res) => {
   const {limit, offset} = req.query;
   if (limit && offset) {
@@ -15,6 +17,7 @@ routerUsers.get('/', (req, res) => {
     res.send('<h1>Endopint Users</h1><br><h3>There are not parameters</h3>')
   }
 })
+
 
 
 ///////////////////////////////////// POST METHOD ///////////////////

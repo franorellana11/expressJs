@@ -47,6 +47,20 @@ router.post('/', (req, res)=> {
 })
 
 
+///////////////////////////////// PATCH METHOD /////////////////////////
+
+router.patch('/:id', (req, res)=> {
+  const { id } = req.params
+  const body = req.body
+  res.json({
+    message: 'update',
+    data: body,
+    id
+  })
+})
+
+
+
 
 module.exports = router
 

@@ -19,6 +19,46 @@ categoriesRouter.get('/', (req, res) => {
 })
 
 
+///////////////////////////////////// POST METHOD ///////////////////
+
+categoriesRouter.post('/', (req, res)=> {
+  const body = req.body
+  res.json({
+    message: 'created Categorie',
+    data: body
+  })
+})
+
+
+///////////////////////////////// PATCH METHOD /////////////////////////
+
+categoriesRouter.patch('/:id', (req, res)=> {
+  const { id } = req.params
+  const body = req.body
+  res.json({
+    message: 'update Categorie',
+    data: body,
+    id
+  })
+})
+
+
+////////////////////////////// DELETE METHOD ////////////////////
+
+
+
+categoriesRouter.delete('/:id', (req, res)=> {
+  const { id } = req.params
+  res.json({
+    message: 'deleted Categorie',
+    id
+  })
+})
+
+
+
+
+
 // categoriesRouter.get("/categories/:categoryid/products/:productsid", (req,res) => {
 //   const { categoryid, productsid } = req.params;
 //   res.json({

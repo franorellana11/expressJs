@@ -3,6 +3,7 @@ const faker = require('faker')
 
 const router = express.Router()
 
+//////////////////////////////// GET METHOD ///////////////////
 
 router.get('/', (req, res) => {
   let products = []

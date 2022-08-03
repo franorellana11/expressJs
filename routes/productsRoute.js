@@ -4,10 +4,6 @@ const faker = require('faker')
 const router = express.Router()
 
 
-
-
-
-
 router.get('/', (req, res) => {
   let products = []
 
@@ -26,19 +22,9 @@ router.get('/', (req, res) => {
 })
 
 
-
-
-
-
-
 router.get('/filter', (req, res) => {
   res.send('FILTER')
 })
-
-
-
-
-
 
 router.get('/:id', (req,res)=> {
   const {id} = req.params
@@ -49,6 +35,17 @@ router.get('/:id', (req,res)=> {
     text: "Responding in json format"
   })
 })
+
+///////////////////////////////////// POST METHOD ///////////////////
+
+router.post('/', (req, res)=> {
+  const body = req.body
+  res.json({
+    message: 'created',
+    data: body
+  })
+})
+
 
 
 module.exports = router
